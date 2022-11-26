@@ -1,7 +1,8 @@
 import greenfoot.*;
-public class DiceGame extends World {
-    public DiceGame() {
-        super(1200, 700, 1);
+public class LeftRightCenter extends Challenge {
+    private Dice die;
+    private int numDollars;
+    public LeftRightCenter() {
         prepare();
     }
 
@@ -11,5 +12,8 @@ public class DiceGame extends World {
         img.setColor(Color.GREEN);
         setBackground(img);
         img.fill();
+
+        //Prepare the Game
+        numDollars = getPlayers().length;
     }
 }

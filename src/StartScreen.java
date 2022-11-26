@@ -1,9 +1,6 @@
 import greenfoot.*;
 
 public class StartScreen extends World {
-    protected final int players = 7;
-    private Label l;
-
     public StartScreen() {
         super(1200, 700, 1);
         prepare();
@@ -22,7 +19,7 @@ public class StartScreen extends World {
         bg.drawImage(text2, 275, 40);
 
         //add label
-        l = new Label();
+        Label l = new Label();
         addObject(l, 575, 575);
     }
 }

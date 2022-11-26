@@ -2,9 +2,8 @@ import greenfoot.*;
 import java.util.*;
 
 public class Label extends Actor {
-    private List<World> availableGames;
-    private World currentGame;
-
+    private List<Challenge> challenges;
+    private Challenge currentChallenge;
     public Label() {
         GreenfootImage rect = new GreenfootImage(300, 75);
         rect.setColor(Color.LIGHT_GRAY);
@@ -15,33 +14,36 @@ public class Label extends Actor {
         rect.drawImage(textImage, 100, 20);
         setImage(rect);
 
-        availableGames = new ArrayList<World>();
-        addGames();
-        currentGame = selectGame();
+        challenges = new ArrayList<Challenge>();
+        addChallenges();
+        currentChallenge = selectChallenge();
     }
 
-    public World getCurrentGame() {
-        return currentGame;
-    }
-    public void setCurrentGame(World currentGame) {
-        this.currentGame = currentGame;
-    }
     @Override
     public void act() {
         if(Greenfoot.mouseClicked(this)) {
-            Greenfoot.setWorld(currentGame);
-            setCurrentGame(currentGame);
+            setCurrentChallenge(currentChallenge);
+            Greenfoot.setWorld(getCurrentChallenge());
+            System.out.println(getCurrentChallenge());
         }
     }
-    private void addGames() {
-        availableGames.add(new DiceGame());
+    public Challenge selectChallenge() {
+        Random rand = new Random();
+        int index = rand.nextInt(challenges.size());
+        return challenges.get(index);
     }
-    public World selectGame() {
-        Random pickGame = new Random();
-        int gameInIndex = pickGame.nextInt(availableGames.size());
-        return availableGames.get(gameInIndex);
+
+    public Challenge getCurrentChallenge() {
+        return currentChallenge;
     }
-    public List<World> getAvailableGames() {
-        return availableGames;
+    public void setCurrentChallenge(Challenge currentChallenge) {
+        this.currentChallenge = currentChallenge;
+    }
+    public List<Challenge> getChallenges() {
+        return challenges;
+    }
+    private void addChallenges() {
+        challenges.add(new LeftRightCenter());
+        challenges.add(new Verbatim());
     }
 }
