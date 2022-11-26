@@ -1,15 +1,18 @@
 import greenfoot.*;
 import java.util.*;
+
 public class Label extends Actor {
     private List<World> availableGames;
     private World currentGame;
 
     public Label() {
-        GreenfootImage rect = new GreenfootImage(150, 50);
+        GreenfootImage rect = new GreenfootImage(300, 75);
         rect.setColor(Color.LIGHT_GRAY);
-        rect.drawRect(500, 600, rect.getWidth(), rect.getHeight());
-        rect.drawString("START", rect.getWidth() / 2, rect.getHeight() / 2);
+        rect.drawRect(500, 650, 500, 650);
         rect.fill();
+        GreenfootImage textImage
+                = new GreenfootImage("START", 40, null, null);
+        rect.drawImage(textImage, 100, 20);
         setImage(rect);
 
         availableGames = new ArrayList<World>();
@@ -26,10 +29,8 @@ public class Label extends Actor {
     @Override
     public void act() {
         if(Greenfoot.mouseClicked(this)) {
-            System.out.println(getCurrentGame());
             Greenfoot.setWorld(currentGame);
             setCurrentGame(currentGame);
-            System.out.print(getCurrentGame().toString());
         }
     }
     private void addGames() {

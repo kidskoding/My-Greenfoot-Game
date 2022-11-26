@@ -1,7 +1,7 @@
 import greenfoot.*;
 public class DiceGame extends World {
     public DiceGame() {
-        super(1000, 600, 1);
+        super(1200, 700, 1);
         prepare();
     }
 
