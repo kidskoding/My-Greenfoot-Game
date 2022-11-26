@@ -1,0 +1,17 @@
+#BlueJ class context
+comment0.target=Label
+comment1.params=
+comment1.target=Label()
+comment2.params=
+comment2.target=greenfoot.World\ getCurrentGame()
+comment3.params=currentGame
+comment3.target=void\ setCurrentGame(greenfoot.World)
+comment4.params=
+comment4.target=void\ act()
+comment5.params=
+comment5.target=void\ addGames()
+comment6.params=
+comment6.target=greenfoot.World\ selectGame()
+comment7.params=
+comment7.target=java.util.List\ getAvailableGames()
+numComments=8
