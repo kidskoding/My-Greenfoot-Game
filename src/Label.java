@@ -17,9 +17,15 @@ public class Label extends Actor {
         currentGame = selectGame();
     }
 
+    public World getCurrentGame() {
+        return currentGame;
+    }
+    public void setCurrentGame(World currentGame) {
+        this.currentGame = currentGame;
+    }
     @Override
     public void act() {
-        if(Greenfoot.mouseMoved(this)) {
+        if(Greenfoot.mouseClicked(this)) {
             System.out.println(getCurrentGame());
             Greenfoot.setWorld(currentGame);
             setCurrentGame(currentGame);
@@ -33,13 +39,6 @@ public class Label extends Actor {
         Random pickGame = new Random();
         int gameInIndex = pickGame.nextInt(availableGames.size());
         return availableGames.get(gameInIndex);
-    }
-
-    public World getCurrentGame() {
-        return currentGame;
-    }
-    public void setCurrentGame(World currentGame) {
-        this.currentGame = currentGame;
     }
     public List<World> getAvailableGames() {
         return availableGames;
