@@ -3,7 +3,7 @@ import greenfoot.*;
 public class Banner extends Actor {
     private Challenge currentChallenge;
     private StringBuffer c;
-    private final String txt = "Current Challenge: ";
+    private final String txt = "Upcoming Challenge: ";
     private Banner() {
 
     }
