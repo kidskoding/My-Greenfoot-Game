@@ -1,7 +1,6 @@
 import greenfoot.*;
-import java.util.*;
 
-public class Challenge extends World {
+public abstract class Challenge extends World {
     private Player[] players;
 
     public Challenge() {
@@ -11,9 +10,13 @@ public class Challenge extends World {
 
     private void prepare() {
         players = new Player[7];
+        showBanner();
+        Greenfoot.delay(10);
+        playInstructions();
     }
-
     public Player[] getPlayers() {
         return players;
     }
+    protected abstract void showBanner();
+    protected abstract void playInstructions();
 }

@@ -24,7 +24,6 @@ public class Label extends Actor {
         if(Greenfoot.mouseClicked(this)) {
             setCurrentChallenge(currentChallenge);
             Greenfoot.setWorld(getCurrentChallenge());
-            System.out.println(getCurrentChallenge());
         }
     }
     public Challenge selectChallenge() {
@@ -44,6 +43,6 @@ public class Label extends Actor {
     }
     private void addChallenges() {
         challenges.add(new LeftRightCenter());
-        challenges.add(new Verbatim());
+        //challenges.add(new Verbatim());
     }
 }

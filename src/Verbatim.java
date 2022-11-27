@@ -5,4 +5,14 @@ public class Verbatim extends Challenge {
     public Verbatim() {
 
     }
+
+    @Override
+    protected void showBanner() {
+
+    }
+
+    @Override
+    protected void playInstructions() {
+
+    }
 }
