@@ -1,0 +1,11 @@
+#BlueJ class context
+comment0.target=Banner
+comment1.params=
+comment1.target=Banner()
+comment2.params=currentChallenge
+comment2.target=Banner(Challenge)
+comment3.params=
+comment3.target=Challenge\ getCurrentChallenge()
+comment4.params=currentChallenge
+comment4.target=void\ setCurrentChallenge(Challenge)
+numComments=5

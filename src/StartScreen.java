@@ -1,7 +1,6 @@
 import greenfoot.*;
 
 public class StartScreen extends World {
-    protected final int players = 7;
     private Label l;
 
     public StartScreen() {
@@ -12,9 +11,9 @@ public class StartScreen extends World {
     private void prepare() {
         //create bg
         GreenfootImage bg = new GreenfootImage(getWidth(), getHeight());
-        setBackground(bg);
         bg.setColor(new Color(153, 230, 255));
         bg.fill();
+        setBackground(bg);
 
         //set text
         GreenfootImage text2 = new GreenfootImage("Welcome to my own Game", 64,
