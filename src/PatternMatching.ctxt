@@ -1,7 +1,7 @@
 #BlueJ class context
-comment0.target=LeftRightCenter
+comment0.target=PatternMatching
 comment1.params=
-comment1.target=LeftRightCenter()
+comment1.target=PatternMatching()
 comment2.params=
 comment2.target=void\ prepare()
 comment3.params=
