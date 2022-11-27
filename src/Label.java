@@ -2,46 +2,60 @@ import greenfoot.*;
 import java.util.*;
 
 public class Label extends Actor {
-    private List<World> availableGames;
-    private World currentGame;
+    private List<Challenge> challenges;
+    private Challenge currentChallenge;
+    private Banner b;
 
     public Label() {
         GreenfootImage rect = new GreenfootImage(300, 75);
         rect.setColor(Color.LIGHT_GRAY);
         rect.drawRect(500, 650, 500, 650);
         rect.fill();
+
         GreenfootImage textImage
                 = new GreenfootImage("START", 40, null, null);
         rect.drawImage(textImage, 100, 20);
         setImage(rect);
 
-        availableGames = new ArrayList<World>();
-        addGames();
-        currentGame = selectGame();
+        challenges = new ArrayList<Challenge>();
+        addChallenges();
+        currentChallenge = selectChallenge();
+        b = new Banner(currentChallenge);
     }
 
-    public World getCurrentGame() {
-        return currentGame;
-    }
-    public void setCurrentGame(World currentGame) {
-        this.currentGame = currentGame;
-    }
+    //Called when hit run button
     @Override
     public void act() {
         if(Greenfoot.mouseClicked(this)) {
-            Greenfoot.setWorld(currentGame);
-            setCurrentGame(currentGame);
+            b.setCurrentChallenge(currentChallenge);
+            makeTransparent();
+           
+            getWorld().addObject(b, getWorld().getWidth() / 2, getWorld().getHeight() / 2);
+            getWorld().removeObject(this);
+            Greenfoot.delay(100);
+            Greenfoot.setWorld(currentChallenge);
         }
     }
-    private void addGames() {
-        availableGames.add(new DiceGame());
+    //helper methods
+    public Challenge selectChallenge() {
+        Random rand = new Random();
+        int index = rand.nextInt(challenges.size());
+        return challenges.get(index);
     }
-    public World selectGame() {
-        Random pickGame = new Random();
-        int gameInIndex = pickGame.nextInt(availableGames.size());
-        return availableGames.get(gameInIndex);
+    private void makeTransparent() {
+        GreenfootImage bg = new GreenfootImage(getWorld().getWidth(), getWorld().getHeight());
+        getWorld().setBackground("blurred_bg.png");
     }
-    public List<World> getAvailableGames() {
-        return availableGames;
+    private void addChallenges() {
+        //challenges.add(new LeftRightCenter());
+        challenges.add(new PatternMatching());
+    }
+
+    //Accessor, Mutator methods
+    public Banner getBanner() {
+        return b;
+    }
+    public void setBanner(Banner b) {
+        this.b = b;
     }
 }
