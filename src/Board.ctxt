@@ -1,0 +1,13 @@
+#BlueJ class context
+comment0.target=Board
+comment1.params=
+comment1.target=Board()
+comment2.params=
+comment2.target=void\ prepare()
+comment3.params=
+comment3.target=void\ act()
+comment4.params=
+comment4.target=void\ createBoard()
+comment5.params=
+comment5.target=void\ fill()
+numComments=6

@@ -17,9 +17,12 @@ public class LeftRightCenter extends Challenge {
         setBackground(bg);
 
         //Prepares the Game
-        numDollars = getPlayers().length * 3;
+        numDollars = 6;
     }
+    @Override
+    public void playGame() {
 
+    }
     @Override
     public void playInstructions() {
 

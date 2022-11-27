@@ -48,7 +48,7 @@ public class Label extends Actor {
     }
     private void addChallenges() {
         //challenges.add(new LeftRightCenter());
-        challenges.add(new PatternMatching());
+        challenges.add(new TileMatcher());
     }
 
     //Accessor, Mutator methods
